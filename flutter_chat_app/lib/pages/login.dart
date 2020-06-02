@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Custom_buttons/Choose_buttons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'Chat.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -11,6 +12,18 @@ class _LoginState extends State<Login> {
   String password;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> loginUser() async {
+    FirebaseUser user = (await _auth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    )).user;
+
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) => Chat(),
+    ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +52,9 @@ class _LoginState extends State<Login> {
               hintText: "Insert your Password...",
             ),),
           SizedBox(height: 40),
-          CustomButton(text_button: "Register",
+          CustomButton(text_button: "Log In",
               call_back: () async {
+            await loginUser();
               })
         ],
       ),
