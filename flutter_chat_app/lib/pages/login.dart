@@ -20,7 +20,9 @@ class _LoginState extends State<Login> {
     )).user;
 
     Navigator.push(context, MaterialPageRoute(
-      builder: (context) => Chat(),
+      builder: (context) => Chat(
+        user: user,
+      ),
     ),
     );
   }
@@ -29,7 +31,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Chat app"),
+        title: Text("Log In"),
         backgroundColor: Colors.grey[700],
       ),
       body: Column(
