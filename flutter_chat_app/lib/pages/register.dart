@@ -45,7 +45,16 @@ class _RegisterState extends State<Register> {
             keyboardType:  TextInputType.emailAddress,
             decoration:  InputDecoration(
               hintText: "Insert your Email...",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(36),
+                borderSide:  BorderSide(color: Colors.white, width: 0.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(36),
+                  borderSide: BorderSide(color: Colors.white)),
+              filled: true,
             ),
+
           ),
           SizedBox(height: 40),
           TextField(
@@ -53,8 +62,16 @@ class _RegisterState extends State<Register> {
             autocorrect: false,
             obscureText: true,
             decoration:  InputDecoration(
-            hintText: "Insert your Password...",
-          ),),
+              hintText: "Insert your Password...",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(36),
+                borderSide:  BorderSide(color: Colors.white, width: 0.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(36),
+                  borderSide: BorderSide(color: Colors.white)),
+              filled: true,
+            ),),
           SizedBox(height: 40),
           CustomButton(text_button: "Register",
           call_back: () async {
