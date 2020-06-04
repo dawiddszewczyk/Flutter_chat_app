@@ -4,6 +4,7 @@ import 'Custom_buttons/Choose_buttons.dart';
 import 'login.dart';
 import 'register.dart';
 import 'Phone_auth.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 class Choose extends StatefulWidget {
 
   @override
@@ -31,9 +32,17 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-                Text("Simple Chat",
-                style: TextStyle(fontWeight: FontWeight.w500,fontSize: 30)),
-                SizedBox(height: 30),
+              Text(
+                'Welcome!',
+                style: TextStyle(
+                  fontFamily: 'Segoe UI',
+                  fontSize: 35,
+                  color: const Color(0xff17aff5),
+                  fontWeight: FontWeight.w300,
+                ),
+                textAlign: TextAlign.center,
+              ),
+                SizedBox(height: 40),
                 CustomButton(
                   text_button: "Log In",
                   call_back: () {

@@ -32,9 +32,12 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Log In"),
-        backgroundColor: Colors.grey[700],
-        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.blue),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +48,16 @@ class _LoginState extends State<Login> {
             keyboardType:  TextInputType.emailAddress,
             decoration:  InputDecoration(
               hintText: "Insert your Email...",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(36),
+                borderSide:  BorderSide(color: Colors.white, width: 0.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(36),
+                  borderSide: BorderSide(color: Colors.white)),
+              filled: true,
             ),
+
           ),
           SizedBox(height: 40),
           TextField(
@@ -54,6 +66,14 @@ class _LoginState extends State<Login> {
             obscureText: true,
             decoration:  InputDecoration(
               hintText: "Insert your Password...",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(36),
+                borderSide:  BorderSide(color: Colors.white, width: 0.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(36),
+                  borderSide: BorderSide(color: Colors.white)),
+              filled: true,
             ),),
           SizedBox(height: 40),
           CustomButton(text_button: "Log In",

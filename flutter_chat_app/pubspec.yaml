@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   firebase_auth: ^0.16.1
   cloud_firestore: ^0.13.6
+  adobe_xd: ^0.1.4
 
 
 dev_dependencies:

@@ -12,8 +12,14 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
           onPressed: call_back,
-          minWidth: 150.0,
-          child: Text(text_button),
+          minWidth: 220.0,
+          child: Text(text_button,
+            style: TextStyle(
+              fontFamily: 'Segoe UI',
+              fontSize: 16,
+              color: const Color(0xff707070),
+            ),
+          ),
         ),
       ),
     );

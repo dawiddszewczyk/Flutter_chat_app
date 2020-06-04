@@ -16,14 +16,13 @@ class _sms_authState extends State<sms_auth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBar(
-        backgroundColor: Colors.grey[700],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: Colors.blue),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text("Phone Auth"),
-        centerTitle: true,
       ),
       body: Form(
         key: formKey,
