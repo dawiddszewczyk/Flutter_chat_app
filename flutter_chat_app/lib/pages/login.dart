@@ -14,6 +14,7 @@ class _LoginState extends State<Login> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> loginUser() async {
+    try {
     FirebaseUser user = (await _auth.signInWithEmailAndPassword(
       email: email,
       password: password,
@@ -24,7 +25,7 @@ class _LoginState extends State<Login> {
         user: user,
       ),
     ),
-    );
+    );} catch (e){print("Error $e");}
   }
 
   @override
@@ -33,6 +34,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         title: Text("Log In"),
         backgroundColor: Colors.grey[700],
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

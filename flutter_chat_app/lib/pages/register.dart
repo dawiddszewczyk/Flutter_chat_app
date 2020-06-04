@@ -31,6 +31,7 @@ class _RegisterState extends State<Register> {
         appBar: AppBar(
           title: Text("Chat app"),
           backgroundColor: Colors.grey[700],
+          centerTitle: true,
         ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app/pages/Authservice.dart';
 import 'Custom_buttons/Choose_buttons.dart';
 import 'login.dart';
 import 'register.dart';
+import 'Phone_auth.dart';
 class Choose extends StatefulWidget {
 
   @override
@@ -51,6 +53,16 @@ class MyHomePage extends StatelessWidget {
                   );
                 },
                 ),
+                SizedBox(height: 30),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(onTap: () {
+                    Navigator.push(context, new MaterialPageRoute(
+                        builder: (context) =>
+                            AuthService().handleAuth())
+                    );
+                  },child: Text("Phone authorization")),
+                )
             ],
           ),
         ),
