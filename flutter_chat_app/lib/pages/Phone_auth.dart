@@ -15,52 +15,61 @@ class _sms_authState extends State<sms_auth> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.blue),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-      ),
-      body: Form(
-        key: formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(left: 25.0,right: 25.0),
-                child: TextFormField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(hintText: 'Enter phone number'),
-                  onChanged: ((val){
-                    this.phoneNumber =val;
-                  }),
-                ),
+    return Stack(
+      children: <Widget>[
+        Image(image: AssetImage('images/phone_1.png'),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.blue),
+              onPressed: () => Navigator.of(context).pop(),
             ),
-            codeSent ? Padding(
-              padding: EdgeInsets.only(left: 25.0,right: 25.0),
-              child: TextFormField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(hintText: 'Enter your Code'),
-                onChanged: (val){
-                  setState(() {
-                    this.smsCode = val;
-                  });
-                },
-              ),
-            ): Container(),
-            Padding(
-                padding: EdgeInsets.only(left: 25.0, right: 25.0),
-                child: RaisedButton(
-                    child: Center(child: codeSent ? Text('Login'):Text('Verify')),
-                    onPressed: () {
-                      codeSent ? AuthService().signInWithOTP(smsCode, verificationId):verifyPhone(phoneNumber);
-                    })),
-          ],
+          ),
+          body: Form(
+            key: formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(left: 25.0,right: 25.0),
+                  child: TextFormField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(hintText: 'Enter phone number'),
+                    onChanged: ((val){
+                      this.phoneNumber =val;
+                    }),
+                  ),
+                ),
+                codeSent ? Padding(
+                  padding: EdgeInsets.only(left: 25.0,right: 25.0),
+                  child: TextFormField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(hintText: 'Enter your Code'),
+                    onChanged: (val){
+                      setState(() {
+                        this.smsCode = val;
+                      });
+                    },
+                  ),
+                ): Container(),
+                Padding(
+                    padding: EdgeInsets.only(left: 25.0, right: 25.0),
+                    child: RaisedButton(
+                        child: Center(child: codeSent ? Text('Login'):Text('Verify')),
+                        onPressed: () {
+                          codeSent ? AuthService().signInWithOTP(smsCode, verificationId):verifyPhone(phoneNumber);
+                        })),
+              ],
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
   Future<void> verifyPhone(phoneNo) async {

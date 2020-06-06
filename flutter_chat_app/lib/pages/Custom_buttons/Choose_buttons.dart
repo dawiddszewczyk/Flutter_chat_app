@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  final VoidCallback call_back;
-  final String text_button;
-  const CustomButton({Key key,this.call_back,this.text_button});
+  final VoidCallback callback;
+  final String textbutton;
+  const CustomButton({Key key,this.callback,this.textbutton});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,9 +11,9 @@ class CustomButton extends StatelessWidget {
         elevation:  6.0,
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
-          onPressed: call_back,
+          onPressed: callback,
           minWidth: 220.0,
-          child: Text(text_button,
+          child: Text(textbutton,
             style: TextStyle(
               fontFamily: 'Segoe UI',
               fontSize: 16,

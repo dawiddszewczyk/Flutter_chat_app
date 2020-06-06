@@ -42,76 +42,85 @@ class _RegisterState extends State<Register> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.blue),
-          onPressed: () => Navigator.of(context).pop(),
+    return Stack(
+      children: <Widget>[
+        Image(image: AssetImage('images/logowanie_1.png'),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.blue),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              TextField(
+                controller: userNameText_E_C,
+                keyboardType:  TextInputType.emailAddress,
+                decoration:  InputDecoration(
+                  hintText: "Insert your Nick...",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(36),
+                    borderSide:  BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(36),
+                      borderSide: BorderSide(color: Colors.white)),
+                  filled: true,
+                ),
+
+              ),
+              SizedBox(height: 40),
+              TextField(
+                controller: emailNameText_E_C,
+                onChanged: (value) => email = value,
+                keyboardType:  TextInputType.emailAddress,
+                decoration:  InputDecoration(
+                  hintText: "Insert your Email...",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(36),
+                    borderSide:  BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(36),
+                      borderSide: BorderSide(color: Colors.white)),
+                  filled: true,
+                ),
+
+              ),
+              SizedBox(height: 40),
+              TextField(
+                onChanged: (value) => password = value,
+                autocorrect: false,
+                obscureText: true,
+                decoration:  InputDecoration(
+                  hintText: "Insert your Password...",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(36),
+                    borderSide:  BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(36),
+                      borderSide: BorderSide(color: Colors.white)),
+                  filled: true,
+                ),),
+              SizedBox(height: 40),
+              CustomButton(textbutton: "Register",
+              callback: () async {
+                await registerUser();
+                  })
+            ],
+          ),
         ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          TextField(
-            controller: userNameText_E_C,
-            keyboardType:  TextInputType.emailAddress,
-            decoration:  InputDecoration(
-              hintText: "Insert your Nick...",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(36),
-                borderSide:  BorderSide(color: Colors.white, width: 0.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(36),
-                  borderSide: BorderSide(color: Colors.white)),
-              filled: true,
-            ),
-
-          ),
-          SizedBox(height: 40),
-          TextField(
-            controller: emailNameText_E_C,
-            onChanged: (value) => email = value,
-            keyboardType:  TextInputType.emailAddress,
-            decoration:  InputDecoration(
-              hintText: "Insert your Email...",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(36),
-                borderSide:  BorderSide(color: Colors.white, width: 0.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(36),
-                  borderSide: BorderSide(color: Colors.white)),
-              filled: true,
-            ),
-
-          ),
-          SizedBox(height: 40),
-          TextField(
-            onChanged: (value) => password = value,
-            autocorrect: false,
-            obscureText: true,
-            decoration:  InputDecoration(
-              hintText: "Insert your Password...",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(36),
-                borderSide:  BorderSide(color: Colors.white, width: 0.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(36),
-                  borderSide: BorderSide(color: Colors.white)),
-              filled: true,
-            ),),
-          SizedBox(height: 40),
-          CustomButton(text_button: "Register",
-          call_back: () async {
-            await registerUser();
-              })
-        ],
-      ),
+      ],
     );
   }
 }

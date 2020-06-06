@@ -39,64 +39,74 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.blue),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          TextFormField(
-            validator: (val){
-              return val.isEmpty || val.length<2 ? "Invalid adres email": null;
-            },
-             controller: emailNameText_E_C,
-            onChanged: (value) => email = value,
-            keyboardType:  TextInputType.emailAddress,
-            decoration:  InputDecoration(
-              hintText: "Insert your Email...",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(36),
-                borderSide:  BorderSide(color: Colors.white, width: 0.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(36),
-                  borderSide: BorderSide(color: Colors.white)),
-              filled: true,
+    return Stack(
+      children: <Widget>[
+        Image(image: AssetImage('images/rejestracja_1.png'),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        fit: BoxFit.cover,),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.blue),
+              onPressed: () => Navigator.of(context).pop(),
             ),
-
           ),
-          SizedBox(height: 40),
-          TextField(
-            controller: userNameText_E_C,
-            onChanged: (value) => password = value,
-            autocorrect: false,
-            obscureText: true,
-            decoration:  InputDecoration(
-              hintText: "Insert your Password...",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(36),
-                borderSide:  BorderSide(color: Colors.white, width: 0.0),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              TextFormField(
+                validator: (val){
+                  return val.isEmpty || val.length<2 ? "Invalid adres email": null;
+                },
+                controller: emailNameText_E_C,
+                onChanged: (value) => email = value,
+                keyboardType:  TextInputType.emailAddress,
+                decoration:  InputDecoration(
+                  hintText: "Insert your Email...",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(36),
+                    borderSide:  BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(36),
+                      borderSide: BorderSide(color: Colors.white)),
+                  filled: true,
+                ),
+
               ),
-              focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(36),
-                  borderSide: BorderSide(color: Colors.white)),
-              filled: true,
-            ),),
-          SizedBox(height: 40),
-          CustomButton(text_button: "Log In",
-              call_back: () async {
-            await loginUser();
-              })
-        ],
-      ),
+              SizedBox(height: 40),
+              TextField(
+                controller: userNameText_E_C,
+                onChanged: (value) => password = value,
+                autocorrect: false,
+                obscureText: true,
+                decoration:  InputDecoration(
+                  hintText: "Insert your Password...",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(36),
+                    borderSide:  BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(36),
+                      borderSide: BorderSide(color: Colors.white)),
+                  filled: true,
+                ),),
+              SizedBox(height: 40),
+              CustomButton(textbutton: "Log In",
+                  callback: () async {
+                    await loginUser();
+                  })
+            ],
+          ),
+        ),
+
+      ],
     );
   }
 }

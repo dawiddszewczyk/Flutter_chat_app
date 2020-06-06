@@ -46,8 +46,8 @@ class MyHomePage extends StatelessWidget {
               ),
                 SizedBox(height: 40),
                 CustomButton(
-                  text_button: "Log In",
-                  call_back: () {
+                  textbutton: "Log In",
+                  callback: () {
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context) =>
                          Login())
@@ -56,8 +56,8 @@ class MyHomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 CustomButton(
-                text_button: "Register",
-                call_back: () {
+                textbutton: "Register",
+                callback: () {
                   Navigator.push(context, new MaterialPageRoute(
                       builder: (context) =>
                           Register())
