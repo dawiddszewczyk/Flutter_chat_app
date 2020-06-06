@@ -26,6 +26,7 @@ dependencies:
   firebase_auth: ^0.16.1
   cloud_firestore: ^0.13.6
   adobe_xd: ^0.1.4
+  shared_preferences: ^0.5.7+3
 
 
 dev_dependencies:
@@ -45,8 +46,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+    - images/choose.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
