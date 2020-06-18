@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/pages/helper/f__ShareUserInfo.dart';
 import 'package:flutter_chat_app/pages/services/f__DataBase.dart';
 import 'helper/cs__LoginUserName.dart';
 import 'p__ConversationScreen.dart';
@@ -8,7 +7,6 @@ class SearchScreen extends StatefulWidget {
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
-String _myName;
 bool haveUserSearched = false;
 class _SearchScreenState extends State<SearchScreen> {
 
@@ -20,7 +18,6 @@ class _SearchScreenState extends State<SearchScreen> {
   initiateSearch(){
     databaseMethods.searchByName(searchText_E_C.text).then((val){setState(() {
       searchSnapshot = val;
-      print("$searchSnapshot to jest snapshot do luja wafla");
       setState(() {
         haveUserSearched = true;
       });
@@ -42,8 +39,6 @@ class _SearchScreenState extends State<SearchScreen> {
 
 
   createChatroomAndStartConversation(String username){
-      print('$username TO JEST NICK');
-      print('${Constants.myName} TO JEST myname');
       String chatRoomid = getChatRoomId(username, Constants.myName);
 
       List<String> users = [username, Constants.myName];
@@ -96,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Szukaj znajomych"),
+        title: Text("Search friends"),
       ),
       body: Container(
         child: Column(

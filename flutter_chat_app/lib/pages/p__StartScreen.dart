@@ -3,8 +3,6 @@ import 'package:flutter_chat_app/pages/f__AuthService.dart';
 import 'Custom_buttons/b__Buttons.dart';
 import 'p__LoginScreen.dart';
 import 'p__RegisterScreen.dart';
-import 'p__PhoneAuthScreen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 class Choose extends StatefulWidget {
 
   @override
