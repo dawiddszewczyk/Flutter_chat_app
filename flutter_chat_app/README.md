@@ -1,10 +1,15 @@
 # Flutter chat app
 
 Information about file name:
+
 p__{name} - > Refers to the class designating the particular page in the application.
+
 f__{name} - > Refers to the class containing functions.
+
 b__{name} - > Refers to the class containing custom buttons appearance.
+
 cs_{names} -> c means it is class, and the letter after it indicates the content it holds. 
+
 
 ## Getting Started
 
