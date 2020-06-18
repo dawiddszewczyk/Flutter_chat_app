@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/pages/Custom_buttons/Choose_buttons.dart';
-import 'package:flutter_chat_app/pages/helper/helperfun.dart';
-import 'Chat.dart';
-import 'services/database.dart';
-import 'ChatRoom.dart';
+import 'package:flutter_chat_app/pages/Custom_buttons/b__Buttons.dart';
+import 'package:flutter_chat_app/pages/helper/f__ShareUserInfo.dart';
+import 'services/f__DataBase.dart';
+import 'p__MainScreenChatRooms.dart';
 
 class Register extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/pages/ChatRoom.dart';
-import 'package:flutter_chat_app/pages/helper/helperfun.dart';
-import 'pages/Home_choose.dart';
+import 'package:flutter_chat_app/pages/p__MainScreenChatRooms.dart';
+import 'package:flutter_chat_app/pages/helper/f__ShareUserInfo.dart';
+import 'pages/p__StartScreen.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'dashboard.dart';
-import 'Phone_auth.dart';
+import 'p__DashboardScreen.dart';
+import 'p__PhoneAuthScreen.dart';
 class AuthService{
   handleAuth() {
     return StreamBuilder(

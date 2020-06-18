@@ -1,11 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/pages/ChatRoom.dart';
-import 'package:flutter_chat_app/pages/helper/helperfun.dart';
-import 'package:flutter_chat_app/pages/services/database.dart';
-import 'Custom_buttons/Choose_buttons.dart';
+import 'package:flutter_chat_app/pages/p__MainScreenChatRooms.dart';
+import 'package:flutter_chat_app/pages/helper/f__ShareUserInfo.dart';
+import 'package:flutter_chat_app/pages/services/f__DataBase.dart';
+import 'Custom_buttons/b__Buttons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'Chat.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();

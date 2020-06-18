@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/pages/helper/helperfun.dart';
-import 'package:flutter_chat_app/pages/services/database.dart';
-import 'helper/constans.dart';
-import 'conversation_screen.dart';
+import 'package:flutter_chat_app/pages/helper/f__ShareUserInfo.dart';
+import 'package:flutter_chat_app/pages/services/f__DataBase.dart';
+import 'helper/cs__LoginUserName.dart';
+import 'p__ConversationScreen.dart';
 class SearchScreen extends StatefulWidget {
   @override
   _SearchScreenState createState() => _SearchScreenState();
